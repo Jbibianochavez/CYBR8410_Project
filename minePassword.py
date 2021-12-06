@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import hashlib
+import random
 
 def main():
     NUM_ZEROS = 4
@@ -27,7 +28,7 @@ def calcNetworkHash(Serial, MAC):
     return netHash
     
 def mineNetworkKey(netHash, numZeros):
-    nonce = 0;
+    nonce = random.randint(1000000000000, 100000000000000000);
     concat = netHash.hexdigest() + str(nonce)
     hashVal = getHash(concat)
     valid = checkValid(numZeros, hashVal.hexdigest())

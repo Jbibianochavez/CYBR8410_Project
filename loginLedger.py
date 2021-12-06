@@ -47,7 +47,7 @@ def login(loginLedger, x, networkHash, authHash):
         print(loginBlock.hexdigest())
         return loginLedger
     except Exception:
-        traceback.print_exc()
+        #traceback.print_exc()
         print("Exiting")
     
 def getPassword():

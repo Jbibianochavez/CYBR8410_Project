@@ -8,10 +8,10 @@ def main(networkHash, authHash):
     clientMAC = "AA:BB:CC:DD:EE:55:66:99"
     #minedPassword, networkHash, authHash = minePassword.main()
     authentication = authenticate(networkHash, authHash)
-    loginBlock = genLoginBlock(authentication, clientMAC, authHash)
+    loginBlock, concat = genLoginBlock(authentication, clientMAC, authHash)
     success = checkLoginBlock(loginBlock)
     if(success == 1):
-        return loginBlock
+        return loginBlock, concat
     else:
         return 0
     
@@ -38,7 +38,7 @@ def genLoginBlock(auth, MAC, authHash):
     if(auth == 1):
         concat = MAC + authHash.hexdigest() + str(datetime.now())
         loginBlockHash = minePassword.getHash(concat)
-    return loginBlockHash
+    return loginBlockHash, concat
     
 def checkLoginBlock(loginBlock):
     loginSuccess = 0

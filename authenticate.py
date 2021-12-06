@@ -3,10 +3,10 @@
 import minePassword
 from datetime import datetime
 
-def main():
+def main(networkHash, authHash):
     clientSerial = "958674152"
     clientMAC = "AA:BB:CC:DD:EE:55:66:99"
-    minedPassword, networkHash, authHash = minePassword.main()
+    #minedPassword, networkHash, authHash = minePassword.main()
     authentication = authenticate(networkHash, authHash)
     loginBlock = genLoginBlock(authentication, clientMAC, authHash)
     success = checkLoginBlock(loginBlock)

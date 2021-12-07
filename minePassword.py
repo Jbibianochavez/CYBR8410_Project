@@ -13,7 +13,7 @@ def main():
     netHash = calcNetworkHash(Serial, MAC)
     nonce, hashVal = mineNetworkKey(netHash, NUM_ZEROS)
     minedPassword = nonce
-    print("Nonce: " + str(minedPassword))
+    print("Password: " + str(minedPassword))
     print("HashVal: " + hashVal.hexdigest())
     
     return minedPassword, netHash, hashVal

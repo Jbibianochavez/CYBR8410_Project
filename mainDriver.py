@@ -34,7 +34,7 @@ def login(clientIDLedger, loginLedger, x, networkHash, authHash, NUM_USERS):
         print("Client " + str((x+1)) + " Key: " + key.hexdigest())
         return concat
     except Exception:
-        traceback.print_exc()
+        #traceback.print_exc()
         print("Exiting")
     
 def getPassword():

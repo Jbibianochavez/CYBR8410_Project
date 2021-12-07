@@ -35,7 +35,7 @@ def login(clientIDLedger, loginLedger, x, networkHash, authHash, NUM_USERS):
         return concat
     except Exception:
         #traceback.print_exc()
-        print("Exiting")
+        print("Failure")
     
 def getPassword():
     minedPassword, networkHash, authHash = minePassword.main()

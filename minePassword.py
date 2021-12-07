@@ -14,7 +14,7 @@ def main():
     nonce, hashVal = mineNetworkKey(netHash, NUM_ZEROS)
     minedPassword = nonce
     print("Password: " + str(minedPassword))
-    print("HashVal: " + hashVal.hexdigest())
+    print("Authorization Hash: " + hashVal.hexdigest())
     
     return minedPassword, netHash, hashVal
     

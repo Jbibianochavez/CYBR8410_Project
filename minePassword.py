@@ -33,7 +33,6 @@ def mineNetworkKey(netHash, numZeros):
     hashVal = getHash(concat)
     valid = checkValid(numZeros, hashVal.hexdigest())
     
-    #needs randomized
     while(valid == 0):
         nonce = nonce + 1
         concat = netHash.hexdigest() + str(nonce)
